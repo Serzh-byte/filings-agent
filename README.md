@@ -12,7 +12,7 @@ can call a search tool and a calculator. It stops after 8 steps or 60k tokens.
 pip install -r requirements.txt
 ```
 
-Put your key in `.env` as `ANTHROPIC_API_KEY=...` and the PDFs in `docs/` (I have included the PDFs I tested on), then:
+Put your key in `.env` as `ANTHROPIC_API_KEY=...` and the PDFs in `docs/` (I have included the PDFs I tested on ), then:
 
 ```
 python rag.py build
