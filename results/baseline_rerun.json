@@ -1,0 +1,342 @@
+{
+  "label": "baseline_rerun",
+  "model": "claude-haiku-5-5",
+  "k": 5,
+  "prompt": "v1",
+  "time": "2026-11-25 21:01:33",
+  "results": [
+    {
+      "id": "aem-production",
+      "type": "lookup",
+      "question": "What was Agnico Eagle's gold production in the third quarter of 2026?",
+      "answer": "Agnico Eagle's consolidated gold production in the third quarter of 2026 was **814,012 ounces**, down from 866,936 ounces in the third quarter of 2025 (source: AEM_q3_2026.pdf, p.7).\n\nFor context, the mine-level figures in the same report (p.13\u201319) include Detour Lake at 183,118 oz, Meadowbank at 115,501 oz, Macassa at 80,582 oz, Fosterville at 40,090 oz and Goldex at 29,940 oz for the quarter. These are ounces of gold, not a currency amount.",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 2,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "gold production third quarter 2026",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Agnico Eagle consolidated gold production third quarter total ounces",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 8295,
+      "output_tokens": 607,
+      "stopped": "answered"
+    },
+    {
+      "id": "aem-price",
+      "type": "lookup",
+      "question": "What was Agnico Eagle's average realized gold price per ounce in the third quarter of 2026?",
+      "answer": "Agnico Eagle's average realized gold price in Q3 2026 was **$4,264 per ounce**, up from $3,476 per ounce in Q3 2025 (AEM_q3_2026.pdf, p.7).\n\nThe excerpt shows the figure with a \"$\" sign and no explicit currency code. The C$ amounts elsewhere in the report are labeled separately, so this figure is most likely US dollars, but the excerpt does not state that directly.",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 1,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "average realized gold price per ounce third quarter 2026",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 3688,
+      "output_tokens": 425,
+      "stopped": "answered"
+    },
+    {
+      "id": "aem-cashcost",
+      "type": "lookup",
+      "question": "What were Agnico Eagle's total cash costs per ounce on a by-product basis in the third quarter of 2026?",
+      "answer": "Stopped: token budget exceeded.",
+      "correct": false,
+      "retrieval_hit": false,
+      "tools_ok": true,
+      "n_steps": 8,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Agnico Eagle total cash costs per ounce by-product basis third quarter 2026",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "total cash costs per ounce third quarter 2026 by-product basis per ounce sold",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Agnico Eagle Q3 2026 total cash costs per ounce consolidated results table"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "consolidated gold production costs per ounce three months ended September 30 2026 total cash costs per ounce by-product sold",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Consolidated Operating Results total cash costs per ounce (by-product basis) all-in sustaining costs per ounce three months ended September 30",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Reconciliation of production costs to all-in sustaining costs per ounce total cash costs per ounce by-product basis impact of by-product metals co-product basis",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Total Agnico Eagle total cash costs per ounce by-product basis impact of by-product metals three months ended September 30 2026 consolidated total row",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Consolidated Operating Results gold production production costs per ounce total cash costs per ounce all-in sustaining costs per ounce average realized gold price 814,012",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 61209,
+      "output_tokens": 1505,
+      "stopped": "budget"
+    },
+    {
+      "id": "aem-aisc",
+      "type": "lookup",
+      "question": "What was Agnico Eagle's all-in sustaining cost per ounce on a by-product basis in the third quarter of 2026?",
+      "answer": "Agnico Eagle's all-in sustaining cost (AISC) per ounce on a by-product basis for the third quarter of 2026 was **US$1,648 per ounce** (three months ended September 30, 2026).\n\nSource: AEM_q3_2026.pdf, p.42. The reconciliation table is in US dollars per ounce.\n\nFor context, the same table shows US$1,331 per ounce for Q3 2025 and US$1,529 per ounce for the nine months ended September 30, 2026. The reports I searched only cover Agnico Eagle, so I did not look at EVN.",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 2,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "all-in sustaining cost per ounce by-product basis third quarter 2026",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "All-in sustaining costs per ounce (by-product basis) three months ended September 30, 2026 total",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 8015,
+      "output_tokens": 511,
+      "stopped": "answered"
+    },
+    {
+      "id": "aem-dividend",
+      "type": "lookup",
+      "question": "What quarterly dividend per share did Agnico Eagle declare on July 29, 2026?",
+      "answer": "On July 29, 2026, Agnico Eagle declared a quarterly cash dividend of **US$0.45 per common share**, payable September 15, 2026 to holders of record as of September 1, 2026 (AEM_q3_2026.pdf, p.24). The same figure appears as \"cash dividends declared per common share\" of $0.45 for the quarter (AEM_q3_2026.pdf, p.53).",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 1,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "quarterly dividend per share declared July 29, 2026",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 3370,
+      "output_tokens": 267,
+      "stopped": "answered"
+    },
+    {
+      "id": "aem-buyback",
+      "type": "lookup",
+      "question": "How many common shares did Agnico Eagle repurchase in the third quarter of 2026, and at what average price?",
+      "answer": "In Q3 2026 (three months ended September 30, 2026), Agnico Eagle repurchased **1,297,940 common shares** under its NCIB at an **average price of $192.60** per share, for a total cost of $250.0 million (Q3 2026 report, p. 24; the table on p. 63 shows the cost as $249,989 thousand). The report states these amounts in \"$\" without naming the currency in these passages.",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 2,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "common shares repurchased third quarter 2026 average price per share",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "share repurchase program shares repurchased under NCIB average price",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 5152,
+      "output_tokens": 500,
+      "stopped": "answered"
+    },
+    {
+      "id": "aem-production-change",
+      "type": "calc",
+      "question": "By what percentage did Agnico Eagle's gold production change in Q3 2026 compared with Q3 2025?",
+      "answer": "Agnico Eagle's consolidated gold production fell about 6.1% in Q3 2026 compared with Q3 2025.\n\n- Q3 2026: 814,012 ounces\n- Q3 2025: 866,936 ounces\n\nSource: AEM_q3_2026.pdf, p.7 (Consolidated Operating Results). The change is calculated as (814,012 \u2212 866,936) / 866,936 \u00d7 100.",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 3,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "gold production third quarter 2026 compared with third quarter 2025",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Agnico Eagle consolidated gold production ounces third quarter 2026 total",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "calculate",
+          "args": {
+            "operation": "percent_change",
+            "a": 866936,
+            "b": 814012
+          }
+        }
+      ],
+      "input_tokens": 13000,
+      "output_tokens": 493,
+      "stopped": "answered"
+    },
+    {
+      "id": "aem-price-change",
+      "type": "calc",
+      "question": "By how many dollars per ounce did Agnico Eagle's average realized gold price rise from Q3 2025 to Q3 2026?",
+      "answer": "Agnico Eagle's average realized gold price rose by **US$788 per ounce**, from $3,476 in Q3 2025 to $4,264 in Q3 2026.\n\nSource: AEM_q3_2026.pdf, page 7 (Consolidated Operating Results, three months ended September 30). The report does not state an explicit currency symbol in that table, but the figures are presented with \"$\" alongside C$-denominated items elsewhere in the filing, so I have not confirmed the currency; treat the US$ label as an assumption unless the financial statements confirm it.",
+      "correct": true,
+      "retrieval_hit": true,
+      "tools_ok": true,
+      "n_steps": 3,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "average realized gold price per ounce third quarter",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "realized gold price per ounce Q3 2026",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "calculate",
+          "args": {
+            "operation": "difference",
+            "a": 3476,
+            "b": 4264
+          }
+        }
+      ],
+      "input_tokens": 11083,
+      "output_tokens": 579,
+      "stopped": "answered"
+    },
+    {
+      "id": "refuse-aem-q4",
+      "type": "refusal",
+      "question": "What was Agnico Eagle's net income in the fourth quarter of 2026?",
+      "answer": "I could not find Agnico Eagle's fourth-quarter 2026 net income in these documents. The only Agnico Eagle report available is the third-quarter 2026 report (AEM_q3_2026.pdf), which covers the period ended September 30, 2026.\n\nFor reference, from that report:\n- Net income for the three months ended September 30, 2026 was $1,352,874 thousand (US$1.35 billion) (AEM_q3_2026.pdf, p.54).\n- Net income for the nine months ended September 30, 2026 was $4,648,788 thousand (US$4.65 billion) (AEM_q3_2026.pdf, p.54).\n\nThese figures are for Q3 and year-to-date through September, not for Q4 2026.",
+      "correct": true,
+      "retrieval_hit": null,
+      "tools_ok": true,
+      "n_steps": 2,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Agnico Eagle net income fourth quarter 2026",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "net income for the three months ended December 31, 2026 fourth quarter results",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 7657,
+      "output_tokens": 516,
+      "stopped": "answered"
+    },
+    {
+      "id": "refuse-aem-ceo",
+      "type": "refusal",
+      "question": "Who is the chief executive officer of Agnico Eagle?",
+      "answer": "I could not find the name of Agnico Eagle's chief executive officer in these documents. The Agnico Eagle report I searched (AEM_q3_2026.pdf, the Q3 2026 filing) describes the company's business and lists qualified persons, but does not name the CEO. Two searches, including one on the CEO and certification signature wording, returned no name.",
+      "correct": true,
+      "retrieval_hit": null,
+      "tools_ok": true,
+      "n_steps": 2,
+      "tool_calls": [
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "Chief Executive Officer of Agnico Eagle",
+            "company": "AEM"
+          }
+        },
+        {
+          "tool": "search_filings",
+          "args": {
+            "query": "President and Chief Executive Officer certification signature",
+            "company": "AEM"
+          }
+        }
+      ],
+      "input_tokens": 7377,
+      "output_tokens": 338,
+      "stopped": "answered"
+    }
+  ]
+}

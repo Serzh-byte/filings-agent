@@ -1,0 +1,72 @@
+[
+  {
+    "id": "aem-production",
+    "type": "lookup",
+    "question": "What was Agnico Eagle's gold production in the third quarter of 2026?",
+    "expected": [["814,012"]],
+    "pages": { "AEM_q3_2026.pdf": [7, 33, 42, 49] }
+  },
+  {
+    "id": "aem-price",
+    "type": "lookup",
+    "question": "What was Agnico Eagle's average realized gold price per ounce in the third quarter of 2026?",
+    "expected": [["4,264"]],
+    "pages": { "AEM_q3_2026.pdf": [7, 48] }
+  },
+  {
+    "id": "aem-cashcost",
+    "type": "lookup",
+    "question": "What were Agnico Eagle's total cash costs per ounce on a by-product basis in the third quarter of 2026?",
+    "expected": [["1,133"]],
+    "pages": { "AEM_q3_2026.pdf": [9] }
+  },
+  {
+    "id": "aem-aisc",
+    "type": "lookup",
+    "question": "What was Agnico Eagle's all-in sustaining cost per ounce on a by-product basis in the third quarter of 2026?",
+    "expected": [["1,648"]],
+    "pages": { "AEM_q3_2026.pdf": [42] }
+  },
+  {
+    "id": "aem-dividend",
+    "type": "lookup",
+    "question": "What quarterly dividend per share did Agnico Eagle declare on July 29, 2026?",
+    "expected": [["0.45"]],
+    "pages": { "AEM_q3_2026.pdf": [24, 69] }
+  },
+  {
+    "id": "aem-buyback",
+    "type": "lookup",
+    "question": "How many common shares did Agnico Eagle repurchase in the third quarter of 2026, and at what average price?",
+    "expected": [["1,297,940"], ["192.60"]],
+    "pages": { "AEM_q3_2026.pdf": [24, 63] }
+  },
+  {
+    "id": "aem-production-change",
+    "type": "calc",
+    "question": "By what percentage did Agnico Eagle's gold production change in Q3 2026 compared with Q3 2025?",
+    "expected": [["6.1%"]],
+    "pages": { "AEM_q3_2026.pdf": [7, 42, 49] },
+    "tools": ["calculate"]
+  },
+  {
+    "id": "aem-price-change",
+    "type": "calc",
+    "question": "By how many dollars per ounce did Agnico Eagle's average realized gold price rise from Q3 2025 to Q3 2026?",
+    "expected": [["788"]],
+    "pages": { "AEM_q3_2026.pdf": [7, 48] },
+    "tools": ["calculate"]
+  },
+  {
+    "id": "refuse-aem-q4",
+    "type": "refusal",
+    "question": "What was Agnico Eagle's net income in the fourth quarter of 2026?",
+    "should_refuse": true
+  },
+  {
+    "id": "refuse-aem-ceo",
+    "type": "refusal",
+    "question": "Who is the chief executive officer of Agnico Eagle?",
+    "should_refuse": true
+  }
+]
